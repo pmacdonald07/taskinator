@@ -229,10 +229,10 @@ var saveTasks = function() {
 var loadTasks = function () {
     // get the task items from local storage
     tasks = localStorage.getItem("tasks");
-    //console.log(tasks);
+
     // convert tasks from strings back into an array of objects
     tasks = JSON.parse(tasks);
-    //console.log(tasks);
+
     // iterate through a tasks array and create task elements on the page from it
     for (i = 0; i < tasks.length; i++) {
         tasks[i].id = taskIdCounter;
@@ -272,3 +272,5 @@ var loadTasks = function () {
 formEl.addEventListener("submit", taskFormHandler);
 pageContentEl.addEventListener("click", taskButtonHandler);
 pageContentEl.addEventListener("change", taskStatusChangeHandler);
+loadTasks();
+
